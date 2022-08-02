@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="card-columns">
+        <div *ngFor="let movies of moviesFilho" class="card">
+            <div class="card-body">
+                <!-- se ouver poster_path ele pega a imagem do site -->
+                <img *ngIf="movies.poster_path" src="https://image.tmdb.org/t/p/w300/{{movies.poster_path}}"
+                    class="card-img-top" style="border-radius: 20px;" />
+                <!-- se nao ouver poster_path ele pega a imagem em outro site para o local nao fica quebrado sem imagem -->
+                <img *ngIf="!movies.poster_path"
+                    src="https://www.genesisglobalschool.edu.in/wp-content/uploads/2016/09/noimage.jpg"
+                    class="card-img-top" />
+                <h5 class="card-title">{{movies.title}}</h5>
+            </div>
+        </div>
+    </div>
+</div>
